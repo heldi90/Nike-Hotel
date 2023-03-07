@@ -59,7 +59,7 @@
                         <a class="text-white mr-3" class="nav-link" href="portofolio.php">
                             <b>Home</b>
                         </a>
-                        <a class="text-white mr-3" class="nav-link" href="index.php?pesan=pesan">
+                        <a class="text-white mr-3" class="nav-link" href="index.php">
                             Pesan
                         </a>                  
                         <a class="text-white mr-3" class="nav-link" href="login.php">

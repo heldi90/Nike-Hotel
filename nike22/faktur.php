@@ -234,6 +234,7 @@ $rows = mysqli_fetch_array($sqlo);
 $nama = "SELECT * FROM checklog INNER JOIN datakamar ON checklog.kodeKamar = datakamar.kodeKamar WHERE checklog.idLog = '$kodes'";
 $sqlCek = mysqli_query($conn, $nama);
 $namaRow = mysqli_fetch_array($sqlCek);
+$kamarPesanan = (int) $namaRow['jmhkam']
 
 ?>
 <!DOCTYPE html>
@@ -299,7 +300,7 @@ $namaRow = mysqli_fetch_array($sqlCek);
                         <br>
 Tipe Kamar : <b>#<?php echo $namaRow['kodeKamar']; ?></b>
 <br>
-Harga Kamar : <b>Rp. <?php echo $namaRow['hargaKamar']; ?></b>
+Harga Kamar : <b>Rp. <?php echo (int)$namaRow['hargaKamar'] * $kamarPesanan; ?></b>
                         <br><br>
                     </p>
                     <p>

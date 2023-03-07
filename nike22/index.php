@@ -1,10 +1,9 @@
+
+
 <?php
 error_reporting(0);
 session_start();
 $pesan = $_GET['pesan'];
-
-
-if($pesan){
 ?>
 <!DOCTYPE html>
 <html>
@@ -141,6 +140,11 @@ if($pesan){
             </div>
         </div>
     </section>
+    <?php
+
+if($pesan){
+?>
+
     <?php 
     if($_SESSION['uuid']){
     $rand = $_SESSION['uuid'];

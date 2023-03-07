@@ -8,14 +8,15 @@ $query = "SELECT * FROM checkLog WHERE kodeKamar = '$kodeKmr'";
 // $kamar = "SELECT * FROM checklog INNER JOIN datakamar ON checklog.kodeKamar = datakamar.kodeKamar;"
 
 $sql = mysqli_query($conn, $query);
-$sqlKamar = mysqli_query($conn, $kamar);
+
 $row = mysqli_fetch_array($sql);
-$mow = mysqli_fetch_array($sqlKamar);
+
 
 // $hargaKamar = $mow['hargaKamar'];
 date_default_timezone_set("Asia/Jakarta");
 
     $jmlKamarPesanan = $_POST['jmlPesanan'];
+    $jmlPesanan = (int) $jmlKamarPesanan;
     $checkIn = $_POST['checkIn'];
     $namaPemesan = $_POST['namaPemesan'];
     $email = $_POST['email'];
