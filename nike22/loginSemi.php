@@ -1,0 +1,42 @@
+<?php
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Hotel Hebat - Booking kamar mudah 100% terpercaya.</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="cssico/ardesico.css" type="text/css" media="all" />
+</head>
+<body class="max mx-auto">
+    <section id="mainWrappes">
+        <div class="max-login mx-auto-75">
+            <div class="text-center">
+                <div class="image-logo">
+                    <img class="cover radius-100" src="images/logo.jpg"alt="" width="130" height="130" />
+                    <div>
+                        <b>Login Aplikasi</b>
+                    </div>
+                </div>
+                <div class="mt-3 text-left">
+                    <form action="proses/prosesLogin.php" method="POST" accept-charset="utf-8">
+                        <div class="form-group">
+                            <label for="Email">Email</label>
+                            <input type="text" name="email" class="form-control w-100" placeholder="example@gmail.com" />
+                        </div>
+                        <div class="form-group">
+                            <label for="Email">Password</label>
+                            <input type="password" name="passw" class="form-control w-100" placeholder="***********" />
+                        </div>
+                        <div class="mt-3 form-group">
+                            <button type="submit" name="kirim" class="btn btn-primary w-100">Log In</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Hotel Hebat - Booking kamar mudah 100% terpercaya.</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="cssico/ardesico.css" type="text/css" media="all" />
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+
+            window.addEventListener('scroll', function() {
+
+                if (window.scrollY > 200) {
+                    document.getElementById('navbar_top').classList.add('fixed-top');
+                    // add padding top to show content behind navbar
+                    navbar_height = document.querySelector('.navbar').offsetHeight;
+                    document.body.style.paddingTop = navbar_height + 'px';
+                } else {
+                    document.getElementById('navbar_top').classList.remove('fixed-top');
+                    // remove padding top from body
+                    document.body.style.paddingTop = '0';
+                }
+            });
+        });
+        // DOMContentLoaded  end
+    </script>
+    <style type="text/css" media="all">
+        .max-768 {
+            max-width: 768px;
+        }
+        .w-65 {
+            max-width: 65%;
+        }
+    </style>
+</head>
+<body class="max-768 mx-auto bg-light">
+    <section class="p-3 bg-white text-center">
+        <form class="form">
+            <div class="logos">
+                <img width="130" class="cover" height="130" src="images/logo.jpg" alt="" />
+                <div class="mt-2 w-65 mx-auto">
+                    <h1 class="h3">Hotel Hebat</h1>
+                    <p>
+                        Pada Tanggal
+                        <br>
+                        <b>20 Februari 2022</b>
+                    </p>
+                    <p>
+                        Surat faktur ini dibuat untuk klien yang ingin menetap sementara tanggal 5 Januari 2023 s.d 7 Januari 2023
+                    </p>
+                    <p>
+                        <b>Tertanda</b>
+                    </p>
+                    <p>
+                        Nama Pemesan : <b>Muhamad Ardiansyah</b>
+                        <br>
+                        Kode Booking : <b>#3726273-DELUXE</b>
+                        <br><br><br>
+                        <b>Fasilitas</b>
+                    </p>
+                    <p>
+                        <div class="row">
+                            <div class="col-md-4 col-lg-4 p-2">
+                                <div class="card bg-none border-nonr">
+                                    <img class="cover radius-1" src="images/fasilitas1.jpg" alt="" width="100%" height="210" />
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-4 p-2">
+                                <div class="card bg-none border-nonr">
+                                    <img class="cover radius-1" src="images/fasilitas2.jpg" alt="" width="100%" height="210" />
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-4 p-2">
+                                <div class="card bg-none border-nonr">
+                                    <img class="cover radius-1" src="images/fasilitas3.jpg" alt="" width="100%" height="210" />
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+                    <p>
+                        <b>Dengan Ini Pemesanan Kamar Hotel di Hotel Hebat <span class="text-success">Berhasil</span></b>
+                    </p>
+                    <div class="mt-5">
+                        <b>Hormat Kami</b><br>
+                        Hotel Hebat
+                    </div>
+                    <div class="mt-4">
+                        <input id="createPDF" type="button" class="btn btn-primary" value="Download Faktur"/>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </section>
+    <script src="js/slim.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/popper.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+        var TxtType = function(el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period,
+                10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtType.prototype.tick = function() {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+
+            if (this.isDeleting) {
+                delta /= 2;
+            }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
+
+            setTimeout(function() {
+                that.tick();
+            }, delta);
+        };
+
+        window.onload = function() {
+            var elements = document.getElementsByClassName('typewrite');
+            for (var i = 0; i < elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-type');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                    new TxtType(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            // INJECT CSS
+            var css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+            document.body.appendChild(css);
+        };
+
+    </script>
+    <script type="text/javascript" charset="utf-8">
+        var namaTamu = document.getElementById("openForm");
+        function openModal1() {
+            namaTamu.style.display = "block";
+        }
+        function closeModal1() {
+            namaTamu.style.display = "none";
+        }
+    </script>
+    <script type="text/javascript" src="jquery-3.5.1.js"></script>
+    <script src="jspdf.js"></script>
+    <script>
+        $(document).ready(function () {
+            var form = $('.form'),
+            cache_width = form.width(),
+            a4 = [595.28, 841.89]; // for a4 size paper width and height
+
+            $('#createPDF').on('click', function () {
+                $('body').scrollTop(0);
+                createPDF();
+            });
+
+            function createPDF() {
+                getCanvas().then(function (canvas) {
+                    var
+                    img = canvas.toDataURL("image/png"),
+                    doc = new jsPDF({
+                        unit: 'px',
+                        format: 'a4'
+                    });
+                    doc.addImage(img, 'JPEG', 20, 20);
+                    doc.save('Neo-10'+ Math.random() + '.pdf');
+                    form.width(cache_width);
+                });
+            }
+
+            function getCanvas() {
+                form.width((a4[0] * 1.33333) - 80).css('max-width', 'none');
+                return html2canvas(form, {
+                    imageTimeout: 2000,
+                    removeContainer: true
+                });
+            }
+        });
+    </script>
+</body>
+</html>

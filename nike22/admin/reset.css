@@ -1,0 +1,16 @@
+#fromDataKamar,
+#fromDataFasilitasKamar{
+    position: fixed;
+    top: 70px;
+    height: 80vh;
+    bottom: 110px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1030;
+    background-color: #fff;
+    left: 170px;
+    right: 170px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    display: none;
+}

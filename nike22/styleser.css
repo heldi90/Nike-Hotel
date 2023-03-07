@@ -1,0 +1,87 @@
+.max-login {
+    max-width: 65%;
+}
+.mx-auto-75 {
+    margin: 75px auto;
+}
+.h-30 {
+    height: 370px;
+}
+.cover {
+    object-fit: cover;
+}
+.filter {
+    filter: brightness(70%);
+}
+.image-header {
+    position: relative;
+}
+.text-wrappes {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+}
+.max {
+    max-width: 1200px;
+}
+.w-65 {
+    max-width: 65%;
+}
+.bg-none {
+    background-color: transparent;
+}
+.border-none {
+    border: none;
+}
+.w-5 {
+    max-width: 7.5%;
+}
+.over {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 78vh;
+}
+.w-85 {
+    max-width: 87.5%;
+}
+#openForm {
+    position: fixed;
+    top: 50px;
+    left: 290px;
+    right: 290px;
+    bottom: 70px;
+    z-index: 1030;
+    background-color: #fff;
+    padding: 25px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+}
+.posin {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.posin i {
+    font-size: 30px;
+}
+.radius-100 {
+    border-radius: 100%;
+}
+.radius-1 {
+    border-radius: 4px;
+}
+.nav-item a {
+    color: #fff;
+}
+.bg-primary-2 {
+    background-color: #4970B4;
+}
+.w-1200 {
+    max-width: 100%;
+}
+.bg-gray-1{
+    background: darkgray;
+}

@@ -1,0 +1,17 @@
+.position-nav1 {
+    position: absolute;
+    right: 15px;
+    list-style-type: none;
+    top: 7.5px;
+}
+.ws-1400{
+    width: 1366px;
+}
+.w-80{
+    max-width: 30%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+.main-login{
+    height: 655.9px;
+}
