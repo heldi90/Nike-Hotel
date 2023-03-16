@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Waktu pembuatan: 04 Mar 2023 pada 07.18
--- Versi server: 5.6.38
--- Versi PHP: 7.4.3
+-- Host: 127.0.0.1
+-- Generation Time: Mar 08, 2023 at 02:00 AM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `checkLog`
+-- Table structure for table `checklog`
 --
 
-CREATE TABLE `checkLog` (
+CREATE TABLE `checklog` (
   `idLog` int(11) NOT NULL,
   `rand` text NOT NULL,
   `checkIn` text NOT NULL,
@@ -37,25 +37,30 @@ CREATE TABLE `checkLog` (
   `email` text NOT NULL,
   `kodeKamar` text NOT NULL,
   `nomorP` text NOT NULL,
-  `hargaKamar` text NOT NULL,
-  `namaTamu` text NOT NULL
+  `namaTamu` text NOT NULL,
+  `hargaPesanKamar` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `checkLog`
+-- Dumping data for table `checklog`
 --
 
-INSERT INTO `checkLog` (`idLog`, `rand`, `checkIn`, `checkOut`, `jmhkam`, `namaPemesan`, `email`, `kodeKamar`, `nomorP`, `hargaKamar`, `namaTamu`) VALUES
-(1, '1660-BOOKING', '2023-03-04', '2023-03-05', '2', 'Muhamad Ardiansyah', 'muhardiansyahcodes@gmail.com', 'Premium', '085817555922', '3000000', 'Tiara Putri'),
-(2, '2338-BOOKING', '2023-03-02', '2023-03-03', '1', 'Bayan Amri', 'Bayan@gmmi.com', 'Reguler', '085817555923', '2000000', 'Muhamad Ardiansyah');
+INSERT INTO `checklog` (`idLog`, `rand`, `checkIn`, `checkOut`, `jmhkam`, `namaPemesan`, `email`, `kodeKamar`, `nomorP`, `namaTamu`, `hargaPesanKamar`) VALUES
+(3, '8881-BOOKING', '2023-03-07', '2023-03-07', '1', 'Ariel', 'ariel@gmail.com', 'Premium', '123456789', 'Ariel Tatum', '0'),
+(7, '8049-BOOKING', '2023-03-28', '2023-03-20', '5', 'misela', 'misel7@hma.com', 'Premium', '23426662', 'Misl', '0'),
+(5, '2788-BOOKING', '2023-03-31', '2023-03-28', '1', 'Saputri', 'sap@Gmail.com', 'Reguler', '25234234', 'Putri', '0'),
+(6, '380-BOOKING', '2023-03-30', '2023-03-19', '2', 'suci', 'suci@gmail.com', 'Reguler', '23523525', 'suciiiiiiii', '0'),
+(9, '2289-BOOKING', '2023-03-28', '2023-03-18', '1', 'Nike', 'nike@hsks.com', 'Premium', '656747253647', 'Nike Cantik', '0'),
+(10, '6377-BOOKING', '2023-03-24', '2023-03-01', '1', 'asdasd', 'asdasd@asdasd', 'Reguler', '23123', 'asdasdasd', '0'),
+(11, '5639-BOOKING', '2023-03-29', '2023-03-12', '1', 'ser', 'ser@asd', 'Premium', '123132', 'eda', '0');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dataHotel`
+-- Table structure for table `datahotel`
 --
 
-CREATE TABLE `dataHotel` (
+CREATE TABLE `datahotel` (
   `id` int(11) NOT NULL,
   `fotoHotel` text NOT NULL,
   `namaHotel` text NOT NULL,
@@ -65,10 +70,10 @@ CREATE TABLE `dataHotel` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `dataHotel`
+-- Dumping data for table `datahotel`
 --
 
-INSERT INTO `dataHotel` (`id`, `fotoHotel`, `namaHotel`, `kodeHotel`, `fasilitas`, `dates`) VALUES
+INSERT INTO `datahotel` (`id`, `fotoHotel`, `namaHotel`, `kodeHotel`, `fasilitas`, `dates`) VALUES
 (3, '228-fasilitas1.jpg', 'Hotel Hebat Superior', '18466-TYPE', '', '13:54 01 03 2023'),
 (4, '723-fasilitas2.jpg', 'Hotel Hebat Superior 2', '57941-TYPE', '', '13:54 01 03 2023'),
 (6, '398-fasilitas4.jpg', 'Hotel Hebat Superior 3', '44461-TYPE', '', '13:55 01 03 2023'),
@@ -77,10 +82,10 @@ INSERT INTO `dataHotel` (`id`, `fotoHotel`, `namaHotel`, `kodeHotel`, `fasilitas
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dataKamar`
+-- Table structure for table `datakamar`
 --
 
-CREATE TABLE `dataKamar` (
+CREATE TABLE `datakamar` (
   `id` int(11) NOT NULL,
   `fotoKamar` text NOT NULL,
   `namaKamar` text NOT NULL,
@@ -92,20 +97,20 @@ CREATE TABLE `dataKamar` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `dataKamar`
+-- Dumping data for table `datakamar`
 --
 
-INSERT INTO `dataKamar` (`id`, `fotoKamar`, `namaKamar`, `kodeKamar`, `hargaKamar`, `fasilitas`, `jmlKamar`, `dates`) VALUES
+INSERT INTO `datakamar` (`id`, `fotoKamar`, `namaKamar`, `kodeKamar`, `hargaKamar`, `fasilitas`, `jmlKamar`, `dates`) VALUES
 (10, '510-kamar4.jpg', 'Premature Bad Room', 'Premium', '3000000', '', '10', '21:03 02 03 2023'),
 (9, '694-kamar3.jpg', 'Deluxe ', 'Reguler', '2000000', '', '10', '21:03 02 03 2023');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `LogInput`
+-- Table structure for table `loginput`
 --
 
-CREATE TABLE `LogInput` (
+CREATE TABLE `loginput` (
   `idInput` int(11) NOT NULL,
   `namaPemesan` text NOT NULL,
   `jmhKamar` text NOT NULL,
@@ -117,16 +122,16 @@ CREATE TABLE `LogInput` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `LogInput`
+-- Dumping data for table `loginput`
 --
 
-INSERT INTO `LogInput` (`idInput`, `namaPemesan`, `jmhKamar`, `kdeBooking`, `CheckIn`, `CheckOut`, `harga`, `dates`) VALUES
+INSERT INTO `loginput` (`idInput`, `namaPemesan`, `jmhKamar`, `kdeBooking`, `CheckIn`, `CheckOut`, `harga`, `dates`) VALUES
 (4, 'Muhamad', '3', '84751-BOOKING', '2023-03-01', '2023-03-02', '2000000', '17:38 01 Mar 2023');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -138,7 +143,7 @@ CREATE TABLE `users` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `nama`, `email`, `passw`, `role`) VALUES
@@ -150,65 +155,65 @@ INSERT INTO `users` (`id`, `nama`, `email`, `passw`, `role`) VALUES
 --
 
 --
--- Indeks untuk tabel `checkLog`
+-- Indexes for table `checklog`
 --
-ALTER TABLE `checkLog`
+ALTER TABLE `checklog`
   ADD PRIMARY KEY (`idLog`);
 
 --
--- Indeks untuk tabel `dataHotel`
+-- Indexes for table `datahotel`
 --
-ALTER TABLE `dataHotel`
+ALTER TABLE `datahotel`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `dataKamar`
+-- Indexes for table `datakamar`
 --
-ALTER TABLE `dataKamar`
+ALTER TABLE `datakamar`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `LogInput`
+-- Indexes for table `loginput`
 --
-ALTER TABLE `LogInput`
+ALTER TABLE `loginput`
   ADD PRIMARY KEY (`idInput`);
 
 --
--- Indeks untuk tabel `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `checkLog`
+-- AUTO_INCREMENT for table `checklog`
 --
-ALTER TABLE `checkLog`
-  MODIFY `idLog` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `checklog`
+  MODIFY `idLog` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT untuk tabel `dataHotel`
+-- AUTO_INCREMENT for table `datahotel`
 --
-ALTER TABLE `dataHotel`
+ALTER TABLE `datahotel`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `dataKamar`
+-- AUTO_INCREMENT for table `datakamar`
 --
-ALTER TABLE `dataKamar`
+ALTER TABLE `datakamar`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `LogInput`
+-- AUTO_INCREMENT for table `loginput`
 --
-ALTER TABLE `LogInput`
+ALTER TABLE `loginput`
   MODIFY `idInput` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
